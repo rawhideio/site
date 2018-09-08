@@ -72,4 +72,28 @@
     }
   });
 
+  // MapBoxGL
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic3VwZXJwaGx5IiwiYSI6IjVlYzljYzk3NDY4YWMwNDA3Zjc0NjdjYWYxOThkOWMyIn0.T7cd_y4tv_N3DoBofUZZqQ';
+
+  var wyomap = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/superphly/cjlt9ci5s0g2f2rl6zrsi5woe',
+    center: [-107.671667, 42.971667],
+    zoom: 6.0
+  });
+
+  //wyomap.touchZoom.disable();
+  //wyomap.scrollWheelZoom.disable();
+
+  // wyomap.on('load', function () {
+  //   wyomap.addLayer({
+  //     "id": "cattle",
+  //     "type": "points"
+  //   });
+  // });
+  
+
+  // DataTable
+  $('#geneticsTable').DataTable();
+
 })(jQuery); // End of use strict

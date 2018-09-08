@@ -15,12 +15,16 @@ ul.nav.nav-tabs {
 	}
 }
 
-.full-height {
-  @media (min-width: 992px) {
-    height: 100vh;
-  }
-}
-
 .tab-content .tab-pane {
 	padding-top:20px;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.section-heading {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
