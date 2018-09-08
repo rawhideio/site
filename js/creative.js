@@ -94,6 +94,17 @@
   
 
   // DataTable
-  $('#geneticsTable').DataTable();
+  $('#geneticsTable').DataTable(
+    {
+      autoWidth: true,
+      pageLength: 50,
+      scrollX: true,
+      scrollY: 400,
+      fixedHeader: {
+        header: false,
+        footer: true
+      }
+    }
+  );
 
 })(jQuery); // End of use strict
