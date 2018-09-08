@@ -1,0 +1,48 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    { 'repeat(100)': {
+      type: "Feature",
+      properties: {
+        _id: '{{objectId()}}',
+        index: '{{index()}}',
+        guid: '{{guid()}}',
+        isAlive: '{{bool()}}',
+        picture: 'http://placehold.it/32x32',
+        age: '{{integer(20, 40)}}',
+        eyeColor: '{{random("blue", "brown", "green")}}',
+        sex: '{{random("male", "female")}}',
+        company: '{{company().toUpperCase()}}',
+        phone: '+1 {{phone()}}',
+        address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+        about: '{{lorem(1, "paragraphs")}}',
+        registered: '{{moment(this.date(new Date(2014, 0, 1), new Date())).format("LLLL")}}',
+        sire: '{{objectId()}}',
+        dam: '{{objectId()}}',
+        genes(tags) {
+          const genes = ['RNK', 'TTB', 'QAR', 'IHI', 'BFN', 'WIW', 'ZGD', 'UUL', 'RRS', 'TAJ', 'KNW', 'KBB', 'RLB', 'WSN', 'GWB', 'RPA', 'RPK'];
+          var result = new Array(5),
+  		    len = genes.length,
+      		taken = new Array(len),
+              n = 5;
+
+          while (n--) {
+          	var x = Math.floor(Math.random() * len);
+  	        result[n] = genes[x in taken ? taken[x] : x];
+      	    taken[x] = --len in taken ? taken[len] : len;
+  	    }
+      	return result;
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        coordinates(tags) {
+          return [ 
+            -104.3 + (Math.random() * (-111.3 - -104.3)),
+            41 + (Math.random() * (45 - 41))
+          ]
+        }
+      }
+  } }
+  ]
+}
