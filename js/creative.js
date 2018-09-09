@@ -99,7 +99,7 @@
       autoWidth: true,
       pageLength: 50,
       scrollX: true,
-      scrollY: 400,
+      scrollY: 600,
       fixedHeader: {
         header: false,
         footer: true

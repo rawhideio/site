@@ -6,11 +6,14 @@ ul.nav.nav-tabs {
 			color: $primary;
 		}
 
-		color:#fff;
+		color:#333;
 		font-weight: 700;
     	text-transform: uppercase;
-    	border: none;
+    	border: 1px solid $primary;
     	border-radius: 300px;
+    	padding: 1em;
+    	margin-left: 1em;
+    	margin-right: 1em;
     	font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 	}
 }
@@ -54,10 +57,6 @@ nav.navbar.navbar-shrink a.navbar-brand {
 
 table.dataTable thead tr {
   background-color: #8c4000;
-}
-
-.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate, .dataTables_wrapper .dataTables_paginate .paginate_button {
-	color: #fff;
 }
 
 table.dataTable thead tr {

@@ -20,54 +20,54 @@
         sire: '{{objectId()}}',
         dam: '{{objectId()}}',
         epd: {
-          CED: '{{integer(-17, 24)}}',
-          BW: '{{integer(-6.2, 10.2)}}',
-          WW: '{{integer(-17, 102)}}',
-          YW: '{{integer(-35, 185)}}',
-          RADG: '{{integer(-0.06, 0.57)}}',
-          DMI: '{{integer(-2, 2)}}',
-          YH: '{{integer(-1.4, 1.5)}}',
-          SC: '{{integer(-1.16, 3.07)}}',
-          Doc: '{{integer(-22, 41)}}',
-          HP: '{{integer(-2, 20.2)}}',
-          CEM: '{{integer(-13, +21)}}',
-          Milk: '{{integer(-6, 48)}}',
-          MW: '{{integer(-85, 119)}}',
-          MH: '{{integer(-1.5, 1.7)}}',
-          EN: '{{integer(-52.69, 67.78)}}',
-          CW: '{{integer(-42, 93)}}',
-          Marb: '{{integer(-0.49, 1.89)}}',
-          RE: '{{integer(-0.5, 1.5)}}',
-          Fat: '{{integer(-0.093, 0.119)}}',
-          W: '{{integer(-33.01, 108.59)}}',
-          F: '{{integer(-92.69, 204.12)}}',
-          G: '{{integer(-19.64, 77.08)}}',
-          QG: '{{integer(-28.97, 73.22)}}',
-          YG: '{{integer(-15.67, 14.01)}}',
-          B: '{{integer(-47.06, 242.46)}}'
+          CED(tags)   { return `${tags.integer(-17, 24) }` ;},
+          BW(tags)    { return `${tags.integer(-6.2, 10.2) }` ;},
+          WW(tags)    { return `${tags.integer(-17, 102) }` ;},
+          YW(tags)    { return `${tags.integer(-35, 185) }` ;},
+          RADG(tags)  { return `${tags.integer(-0.06, 0.57) }` ;},
+          DMI(tags)   { return `${tags.integer(-2, 2) }` ;},
+          YH(tags)    { return `${tags.integer(-1.4, 1.5) }` ;},
+          SC(tags)    { return `${tags.integer(-1.16, 3.07) }` ;},
+          Doc(tags)   { return `${tags.integer(-22, 41) }` ;},
+          HP(tags)    { return `${tags.integer(-2, 20.2) }` ;},
+          CEM(tags)   { return `${tags.integer(-13, +21) }` ;},
+          Milk(tags)  { return `${tags.integer(-6, 48) }` ;},
+          MW(tags)    { return `${tags.integer(-85, 119) }` ;},
+          MH(tags)    { return `${tags.integer(-1.5, 1.7) }` ;},
+          EN(tags)    { return `${tags.integer(-52.69, 67.78) }` ;},
+          CW(tags)    { return `${tags.integer(-42, 93) }` ;},
+          Marb(tags)  { return `${tags.integer(-0.49, 1.89) }` ;},
+          RE(tags)    { return `${tags.integer(-0.5, 1.5) }` ;},
+          Fat(tags)   { return `${tags.integer(-0.093, 0.119) }` ;},
+          W(tags)     { return `${tags.integer(-33.01, 108.59) }` ;},
+          F(tags)     { return `${tags.integer(-92.69, 204.12) }` ;},
+          G(tags)     { return `${tags.integer(-19.64, 77.08) }` ;},
+          QG(tags)    { return `${tags.integer(-28.97, 73.22) }` ;},
+          YG(tags)    { return `${tags.integer(-15.67, 14.01) }` ;},
+          B(tags)     { return `${tags.integer(-47.06, 242.46) }` ;}
         },
         genes(tags) {
           const genes = ['RNK', 'TTB', 'QAR', 'IHI', 'BFN', 'WIW', 'ZGD', 'UUL', 'RRS', 'TAJ', 'KNW', 'KBB', 'RLB', 'WSN', 'GWB', 'RPA', 'RPK'];
           var result = new Array(5),
-  		    len = genes.length,
-      		taken = new Array(len),
+          len = genes.length,
+          taken = new Array(len),
               n = 5;
 
           while (n--) {
-          	var x = Math.floor(Math.random() * len);
-  	        result[n] = genes[x in taken ? taken[x] : x];
-      	    taken[x] = --len in taken ? taken[len] : len;
-  	    }
-      	return result;
+            var x = Math.floor(Math.random() * len);
+            result[n] = genes[x in taken ? taken[x] : x];
+            taken[x] = --len in taken ? taken[len] : len;
+        }
+        return result;
         }
       },
       "geometry": {
         "type": "Point",
         coordinates(tags) {
           return [ 
-            -104.3 + (Math.random() * (-111.3 - -104.3)),
+            -104.3 + (Math.random() * (-111.3 + 104.3)),
             41 + (Math.random() * (45 - 41))
-          ]
+          ];
         }
       }
   } }
